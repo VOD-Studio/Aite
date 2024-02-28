@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const a = 'asdasd'
+const a = 'asdasd';
 </script>
 
 <template>

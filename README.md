@@ -1,6 +1,7 @@
 # Aite
 
 ## 技术栈
+
 - Vite + Vue3 + TypeScript
 - Node 版本: 18.16.0
 - CSS 框架: TailwindCSS

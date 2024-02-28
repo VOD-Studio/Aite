@@ -10,7 +10,9 @@
     "tauri:dev": "tauri dev",
     "tauri:build": "tauri build",
     "lint": "eslint --ext .js,.vue .",
-    "lint:fix": "eslint --fix --ext .js,.ts,.vue --ignore-path .eslintignore ."
+    "lint:fix": "eslint --fix --ext .js,.ts,.vue --ignore-path .eslintignore .",
+    "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,md,mdx,css,vue}\" --ignore-unknown",
+    "pretty-check": "prettier \"./**/*.{js,jsx,ts,tsx,json,md,mdx,css,vue}\" --ignore-unknown --check"
   },
   "dependencies": {
     "lucide-vue-next": "^0.341.0",
