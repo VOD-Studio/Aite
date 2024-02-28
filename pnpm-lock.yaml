@@ -49,9 +49,6 @@ devDependencies:
   eslint-plugin-vue:
     specifier: ^9.22.0
     version: 9.22.0(eslint@8.57.0)
-  husky:
-    specifier: ^9.0.11
-    version: 9.0.11
   postcss:
     specifier: ^8.4.35
     version: 8.4.35
@@ -1766,12 +1763,6 @@ packages:
   /html-tags@3.3.1:
     resolution: {integrity: sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==}
     engines: {node: '>=8'}
-    dev: true
-
-  /husky@9.0.11:
-    resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
-    engines: {node: '>=18'}
-    hasBin: true
     dev: true
 
   /ignore@5.3.1:
