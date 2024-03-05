@@ -6,8 +6,14 @@ class Request {
     return (await axiosInstance.get(url, { params: query })).data;
   };
 
-  static post = async <T>(url: string, params?: object): Promise<BaseResponse<T>> => {
-    return (await axiosInstance.post(url, params)).data;
+  static post = <T>(url: string, params?: object): Promise<BaseResponse<T>> => {
+    return new Promise((resolve, reject) => {
+      axiosInstance.post(url, params).then(res => {
+        resolve(res.data);
+      }).catch(err => {
+        reject(err);
+      });
+    });
   };
 }
 

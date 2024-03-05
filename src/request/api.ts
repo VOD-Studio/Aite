@@ -1,6 +1,6 @@
 const api = {
   auth: {
-    register: '/register/'
+    register: '/register'
   }
 };
 

@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import '@arco-design/web-vue/dist/arco.min.css';
+import '@/assets/css/nprogress.css';
 import '@/assets/css/app.css';
 import App from './App.vue';
 import router from '@/router';
