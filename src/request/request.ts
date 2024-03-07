@@ -8,11 +8,14 @@ class Request {
 
   static post = <T>(url: string, params?: object): Promise<BaseResponse<T>> => {
     return new Promise((resolve, reject) => {
-      axiosInstance.post(url, params).then(res => {
-        resolve(res.data);
-      }).catch(err => {
-        reject(err);
-      });
+      axiosInstance
+        .post(url, params)
+        .then((res) => {
+          resolve(res.data);
+        })
+        .catch((err) => {
+          reject(err);
+        });
     });
   };
 }
