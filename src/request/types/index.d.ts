@@ -1,7 +1,7 @@
-export type Status = 'ok'
+export type Status = 'ok';
 
 export interface BaseResponse<T> {
-  status: Status,
-  message: string,
-  data: T
+  status: Status;
+  message: string;
+  data: T;
 }

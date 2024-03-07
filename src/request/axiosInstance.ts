@@ -12,13 +12,13 @@ const handleError = (error: AxiosError) => {
 };
 
 // 请求拦截器
-axiosInstance.interceptors.request.use(config => {
+axiosInstance.interceptors.request.use((config) => {
   NProgress.start();
   return config;
 }, handleError);
 
 // 响应拦截器
-axiosInstance.interceptors.response.use(response => {
+axiosInstance.interceptors.response.use((response) => {
   NProgress.done();
   return response;
 }, handleError);
