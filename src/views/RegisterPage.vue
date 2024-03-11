@@ -31,7 +31,7 @@ const handleSubmit = () => {
         gender: form.gender,
         email: form.email
       })
-        .then((res) => {
+        .then(() => {
           Notification.success('注册成功。');
         })
         .catch((res) => {
