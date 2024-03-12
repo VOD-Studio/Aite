@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
-const Register = () => import('views/Register.vue');
+const Register = () => import('views/RegisterPage.vue');
 
 const routes: RouteRecordRaw[] = [
   {

@@ -13,10 +13,10 @@ const form = reactive({
   gender: Gender.Unknown
 });
 
-const formRules = {
-  email: [{ require: true }, { type: 'email' }],
+const formRules: Record<string, any> = {
+  email: [{ required: true, type: 'email' }],
   username: [],
-  password: [{ require: true }]
+  password: [{ required: true }]
 };
 
 const submitLoading = ref(false);
