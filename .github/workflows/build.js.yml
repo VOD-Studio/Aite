@@ -1,0 +1,45 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: install
+      uses: pnpm/action-setup@v3.0.0
+    - run: pnpm install --frozen-lockfile
+    - run: pnpm build
+      # with:
+        # Version of pnpm to install
+        # version: # optional
+        # Where to store pnpm files
+        # dest: # optional, default is ~/setup-pnpm
+        # If specified, run `pnpm install`
+        # run_install: # optional, default is null
+        # File path to the package.json to read "packageManager" configuration
+        # package_json_file: # optional, default is package.json
+        # When set to true, @pnpm/exe, which is a Node.js bundled package, will be installed, enabling using pnpm without Node.js.
+        # standalone: # optional, default is false
+
