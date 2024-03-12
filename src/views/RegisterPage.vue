@@ -13,10 +13,10 @@ const form = reactive({
   gender: Gender.Unknown
 });
 
-const formRules = {
-  email: [{ require: true }, { type: 'email' }],
+const formRules: Record<string, any> = {
+  email: [{ required: true, type: 'email' }],
   username: [],
-  password: [{ require: true }]
+  password: [{ required: true }]
 };
 
 const submitLoading = ref(false);
@@ -31,7 +31,7 @@ const handleSubmit = () => {
         gender: form.gender,
         email: form.email
       })
-        .then((res) => {
+        .then(() => {
           Notification.success('注册成功。');
         })
         .catch((res) => {
@@ -60,12 +60,22 @@ const handleSubmit = () => {
         size="large"
         @submit="handleSubmit"
       >
-        <a-form-item field="email" label="邮箱" required>
+        <a-form-item
+          field="email"
+          label="邮箱"
+          required
+        >
           <div class="w-96">
-            <a-input v-model="form.email" placeholder="请输入邮箱" />
+            <a-input
+              v-model="form.email"
+              placeholder="请输入邮箱"
+            />
           </div>
         </a-form-item>
-        <a-form-item field="username" label="用户名">
+        <a-form-item
+          field="username"
+          label="用户名"
+        >
           <div class="w-96">
             <a-input
               v-model="form.username"
@@ -73,7 +83,11 @@ const handleSubmit = () => {
             />
           </div>
         </a-form-item>
-        <a-form-item field="password" label="密码" required>
+        <a-form-item
+          field="password"
+          label="密码"
+          required
+        >
           <div class="w-96">
             <a-input-password
               v-model="form.password"
@@ -81,7 +95,10 @@ const handleSubmit = () => {
             />
           </div>
         </a-form-item>
-        <a-form-item field="gender" label="性别">
+        <a-form-item
+          field="gender"
+          label="性别"
+        >
           <a-radio-group v-model="form.gender">
             <a-radio :value="Gender.Unknown">保密</a-radio>
             <a-radio :value="Gender.Man">男</a-radio>
@@ -94,8 +111,9 @@ const handleSubmit = () => {
             html-type="submit"
             type="primary"
             class="w-full"
-            >注册</a-button
           >
+            注册
+          </a-button>
         </a-form-item>
       </a-form>
       <p class="text-xs text-gray-600">
@@ -113,7 +131,11 @@ const handleSubmit = () => {
         >
         。
       </p>
-      <a-link href="" class="font-bold mt-6">已经拥有账号？</a-link>
+      <a-link
+        href=""
+        class="font-bold mt-6"
+        >已经拥有账号？</a-link
+      >
     </div>
   </AuthLayout>
 </template>
