@@ -60,12 +60,23 @@ const handleSubmit = () => {
         size="large"
         @submit="handleSubmit"
       >
-        <a-form-item field="email" label="邮箱" required>
+        <a-form-item
+          field="email"
+          label="邮箱"
+          required
+        >
           <div class="w-full lg:w-96 transition-all">
-            <a-input v-model="form.email" placeholder="请输入邮箱" />
+            <a-input
+              v-model="form.email"
+              placeholder="请输入邮箱"
+            />
           </div>
         </a-form-item>
-        <a-form-item field="password" label="密码" required>
+        <a-form-item
+          field="password"
+          label="密码"
+          required
+        >
           <div class="w-full lg:w-96 transition-all">
             <a-input-password
               v-model="form.password"
@@ -74,7 +85,11 @@ const handleSubmit = () => {
           </div>
         </a-form-item>
         <div class="">
-          <a-link href="" class="font-bold">忘记密码？</a-link>
+          <a-link
+            href=""
+            class="font-bold"
+            >忘记密码？</a-link
+          >
         </div>
         <a-form-item>
           <a-button
@@ -88,7 +103,9 @@ const handleSubmit = () => {
       </a-form>
       <p class="text-gray-600">
         需要新的账号？
-        <RouterLink to="/register" class="font-bold text-primary"
+        <RouterLink
+          to="/register"
+          class="font-bold text-primary"
           >注册</RouterLink
         >
       </p>

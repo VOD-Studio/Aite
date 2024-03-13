@@ -5,8 +5,13 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ArcoResolver } from 'unplugin-vue-components/resolvers';
 
+const isProdcution = process.env.NODE_ENV === 'production';
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  esbuild: {
+    drop: isProdcution ? ['console', 'debugger'] : []
+  },
   plugins: [
     vue(),
     AutoImport({
