@@ -31,7 +31,7 @@ const handleSubmit = () => {
         gender: form.gender,
         email: form.email
       })
-        .then((res) => {
+        .then(() => {
           Notification.success('注册成功。');
         })
         .catch((res) => {
@@ -49,7 +49,7 @@ const handleSubmit = () => {
 
 <template>
   <AuthLayout>
-    <div class="bg-white p-8 pt-6 rounded-md">
+    <div class="bg-white w-full lg:w-fit h-full lg:h-fit p-8 pt-6 rounded-md">
       <h1 class="font-bold text-xl text-center">创建账号</h1>
 
       <a-form
@@ -61,12 +61,12 @@ const handleSubmit = () => {
         @submit="handleSubmit"
       >
         <a-form-item field="email" label="邮箱" required>
-          <div class="w-96">
+          <div class="w-full lg:w-96 transition-all">
             <a-input v-model="form.email" placeholder="请输入邮箱" />
           </div>
         </a-form-item>
         <a-form-item field="username" label="用户名">
-          <div class="w-96">
+          <div class="w-full lg:w-96 transition-all">
             <a-input
               v-model="form.username"
               placeholder="请输入用户名（非必填）"
@@ -74,7 +74,7 @@ const handleSubmit = () => {
           </div>
         </a-form-item>
         <a-form-item field="password" label="密码" required>
-          <div class="w-96">
+          <div class="w-full lg:w-96 transition-all">
             <a-input-password
               v-model="form.password"
               placeholder="请输入密码"
@@ -113,7 +113,9 @@ const handleSubmit = () => {
         >
         。
       </p>
-      <a-link href="" class="font-bold mt-6">已经拥有账号？</a-link>
+      <RouterLink to="/login" class="font-bold mt-6 text-primary block"
+        >已经拥有账号？</RouterLink
+      >
     </div>
   </AuthLayout>
 </template>

@@ -2,9 +2,9 @@ import Request from '@/request/request.ts';
 import api from '@/request/api.ts';
 
 export enum Gender {
-  Unknown,
   Man,
-  Women
+  Women,
+  Unknown
 }
 
 export interface Params {
