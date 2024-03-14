@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AuthLayout from 'layouts/AuthLayout.vue';
 import { reactive, ref } from 'vue';
-import { FormInstance, Notification } from '@arco-design/web-vue';
+import { FormInstance, Notification, FieldRule } from '@arco-design/web-vue';
 import { useUserStore } from '@/store/user.ts';
 import { useRouter } from 'vue-router';
 
@@ -16,9 +16,9 @@ const form = reactive({
   password: ''
 });
 
-const formRules = {
-  email: [{ require: true }, { type: 'email' }],
-  password: [{ require: true }]
+const formRules: Record<string, FieldRule<unknown> | FieldRule<unknown>[]> = {
+  email: [{ required: true }, { type: 'email' }],
+  password: [{ required: true }]
 };
 
 const submitLoading = ref(false);

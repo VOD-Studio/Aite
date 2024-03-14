@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AuthLayout from 'layouts/AuthLayout.vue';
-import { FormInstance, Notification } from '@arco-design/web-vue';
+import { FormInstance, Notification, FieldRule } from '@arco-design/web-vue';
 import { reactive, ref } from 'vue';
 import { Gender, registerRequest } from '@/request/services/auth/register.ts';
 
@@ -13,7 +13,7 @@ const form = reactive({
   gender: Gender.Unknown
 });
 
-const formRules: Record<string, any> = {
+const formRules: Record<string, FieldRule<unknown> | FieldRule<unknown>[]> = {
   email: [{ required: true, type: 'email' }],
   username: [],
   password: [{ required: true }]
