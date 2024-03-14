@@ -13,11 +13,7 @@ module.exports = {
   plugins: ['vue', 'prettier', '@typescript-eslint'],
   rules: {
     'vue/no-v-html': 'off',
-    'vue/multi-word-component-names': [
-      2, {
-        ignores: ['Register', "Login"]
-      }
-    ],
+    'vue/multi-word-component-names': 'off',
     'prettier/prettier': ['error'],
     'semi': 2,
     "no-unused-vars": "off",

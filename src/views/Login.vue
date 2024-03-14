@@ -3,6 +3,9 @@ import AuthLayout from 'layouts/AuthLayout.vue';
 import { reactive, ref } from 'vue';
 import { FormInstance, Notification } from '@arco-design/web-vue';
 import { useUserStore } from '@/store/user.ts';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const userStore = useUserStore();
 
@@ -29,6 +32,9 @@ const handleSubmit = () => {
         .login({
           email: form.email,
           password: form.password
+        })
+        .then(() => {
+          router.push('/main');
         })
         .catch((res) => {
           switch (res.response.status) {

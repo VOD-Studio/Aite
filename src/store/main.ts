@@ -1,9 +1,16 @@
 import { defineStore } from 'pinia';
 
 export const useMainStore = defineStore('main', {
-  state: () => ({}),
+  state: () => ({
+    // 边栏收缩状态
+    sideBarCollapsed: false
+  }),
 
   getters: {},
 
-  actions: {}
+  actions: {
+    setSideBarCollapsed(value: boolean) {
+      this.sideBarCollapsed = value;
+    }
+  }
 });

@@ -14,9 +14,15 @@ declare module 'vue' {
     AInput: typeof import('@arco-design/web-vue')['Input']
     AInputPassword: typeof import('@arco-design/web-vue')['InputPassword']
     ALink: typeof import('@arco-design/web-vue')['Link']
+    AMenu: typeof import('@arco-design/web-vue')['Menu']
+    AMenuItem: typeof import('@arco-design/web-vue')['MenuItem']
+    APopover: typeof import('@arco-design/web-vue')['Popover']
+    ApplicationMenu: typeof import('./src/components/ApplicationMenu.vue')['default']
     ARadio: typeof import('@arco-design/web-vue')['Radio']
     ARadioGroup: typeof import('@arco-design/web-vue')['RadioGroup']
+    MainUserCard: typeof import('./src/components/MainUserCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SideBar: typeof import('./src/components/SideBar.vue')['default']
   }
 }
