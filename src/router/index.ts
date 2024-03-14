@@ -1,9 +1,11 @@
+import { useSideBarStore } from '@/store/side-bar';
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
 const Register = () => import('views/RegisterPage.vue');
 const Login = () => import('views/Login.vue');
 
 const MainPage = () => import('views/main/Index.vue');
+const ChatIndex = () => import('views/main/chat/Index.vue');
 
 const routes: RouteRecordRaw[] = [
   {
@@ -17,9 +19,16 @@ const routes: RouteRecordRaw[] = [
     component: Login
   },
   {
-    path: '/main',
+    path: '/',
     name: 'Main',
-    component: MainPage
+    component: MainPage,
+    children: [
+      {
+        path: '/chat',
+        name: 'Chat',
+        component: ChatIndex
+      }
+    ]
   }
 ];
 
@@ -28,4 +37,9 @@ const router = createRouter({
   routes
 });
 
+router.beforeEach((to) => {
+  const sideBarStore = useSideBarStore();
+  // 切换菜单高亮项
+  sideBarStore.setActiveMenuItem(to.path);
+});
 export default router;

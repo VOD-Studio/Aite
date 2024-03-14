@@ -1,20 +1,35 @@
 <script setup lang="ts">
-import { MessageSquareMore } from 'lucide-vue-next';
 import { useSideBarStore } from '@/store/side-bar.ts';
+import Icon from 'components/Icon.vue';
+import { useRouter } from 'vue-router';
 
 const sideBarStore = useSideBarStore();
+
+const router = useRouter();
+
+const handleMenuItemClick = (key: string) => {
+  router.push(key);
+};
 </script>
 <template>
   <div>
     <a-menu
       mode="vertical"
+      :selected-keys="[sideBarStore.activeMenuItem]"
       :collapsed="sideBarStore.collapsed"
+      @menu-item-click="handleMenuItemClick"
     >
-      <a-menu-item icon="icon-thumb-up">
+      <a-menu-item
+        v-for="item in sideBarStore.menus"
+        :key="item.path"
+      >
         <template #icon>
-          <MessageSquareMore size="18" />
+          <Icon
+            :name="item.icon"
+            :size="18"
+          />
         </template>
-        舌战群儒
+        {{ item.name }}
       </a-menu-item>
     </a-menu>
   </div>

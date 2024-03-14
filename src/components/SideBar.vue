@@ -18,7 +18,7 @@ const sideBarStore = useSideBarStore();
       <!-- logo 部分 -->
       <div class="flex items-center justify-center w-full py-10">
         <RouterLink
-          to="/main"
+          to="/"
           class="text-3xl text-primary font-bold"
           >{{ sideBarStore.collapsed ? 'A' : 'AITE' }}
         </RouterLink>
