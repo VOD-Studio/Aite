@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Dashboard from 'components/chat/Dashboard.vue';
+</script>
 
 <template>
-  <div>聊天</div>
+  <Dashboard />
 </template>

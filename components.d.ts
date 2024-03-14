@@ -20,10 +20,12 @@ declare module 'vue' {
     ApplicationMenu: typeof import('./src/components/ApplicationMenu.vue')['default']
     ARadio: typeof import('@arco-design/web-vue')['Radio']
     ARadioGroup: typeof import('@arco-design/web-vue')['RadioGroup']
+    Dashboard: typeof import('./src/components/chat/Dashboard.vue')['default']
     Icon: typeof import('./src/components/Icon.vue')['default']
     MainUserCard: typeof import('./src/components/MainUserCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Search: typeof import('./src/components/chat/Search.vue')['default']
     SideBar: typeof import('./src/components/SideBar.vue')['default']
   }
 }
