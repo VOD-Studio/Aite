@@ -8,13 +8,15 @@ interface Props {
   color?: String;
   strokeWidth?: Number;
   defaultClass?: String;
+  fill?: String;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   size: 16,
   color: '',
   strokeWidth: 2,
-  defaultClass: ''
+  defaultClass: '',
+  fill: 'none'
 });
 const icon = computed(() => icons[props.name]);
 </script>
@@ -26,5 +28,6 @@ const icon = computed(() => icons[props.name]);
     :color="props.color"
     :stroke-width="props.strokeWidth"
     :default-class="props.defaultClass"
+    :fill="props.fill"
   />
 </template>

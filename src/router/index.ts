@@ -6,6 +6,7 @@ const Login = () => import('views/Login.vue');
 
 const MainPage = () => import('views/main/Index.vue');
 const ChatIndex = () => import('views/main/chat/Index.vue');
+const ChatUserProfile = () => import('views/main/chat/UserProfile.vue');
 
 const routes: RouteRecordRaw[] = [
   {
@@ -26,7 +27,14 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/chat',
         name: 'Chat',
-        component: ChatIndex
+        component: ChatIndex,
+        children: [
+          {
+            path: 'profile',
+            name: 'ChatUserProfile',
+            component: ChatUserProfile
+          }
+        ]
       }
     ]
   }

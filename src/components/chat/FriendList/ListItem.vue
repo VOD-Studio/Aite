@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Gender } from '@/request/services/auth/register.ts';
+import OnlineStatus from 'components/OnlineStatus.vue';
 
 interface Props {
   avatar?: string;
@@ -32,12 +33,10 @@ const props = withDefaults(defineProps<Props>(), {
       <span class="ml-4">{{ props.username }}</span>
     </div>
     <div class="flex items-center">
-      <div
-        class="h-2 aspect-square rounded-full"
-        :class="[props.online ? ' bg-green-600' : 'bg-gray-400'].join('')"
-      >
-        >
-      </div>
+      <OnlineStatus
+        :status="props.online"
+        :show-text="false"
+      />
     </div>
   </div>
 </template>
