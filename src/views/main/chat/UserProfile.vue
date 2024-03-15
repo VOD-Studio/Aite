@@ -3,6 +3,7 @@ import { reactive } from 'vue';
 import Icon from 'components/Icon.vue';
 import PageHeader from 'components/PageHeader.vue';
 import OnlineStatus from 'components/OnlineStatus.vue';
+import Declaration from 'components/profile/Declaration.vue';
 
 interface BaseInfoListItem {
   label: string;
@@ -137,7 +138,15 @@ const baseInfoList = reactive<BaseInfoListItem[]>([
       </div>
 
       <section class="w-full flex-grow bg-gray-50">
-        <div class="w-full mx-auto max-w-[1000px]"></div>
+        <div class="w-full mx-auto max-w-[1000px] mt-12">
+          <div class="flex justify-between">
+            <div class="flex-grow"></div>
+
+            <div class="flex-shrink-0 w-80 ml-6">
+              <Declaration />
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </div>

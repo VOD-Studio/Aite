@@ -17,7 +17,7 @@ interface State {
 
 export const useSideBarStore = defineStore('sideBar', {
   state: (): State => ({
-    collapsed: false,
+    collapsed: true,
     width: '50px',
     menus: [
       {
