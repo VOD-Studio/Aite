@@ -4,6 +4,7 @@ import Icon from 'components/Icon.vue';
 import PageHeader from 'components/PageHeader.vue';
 import OnlineStatus from 'components/OnlineStatus.vue';
 import Declaration from 'components/profile/Declaration.vue';
+import MiniRecordList from 'components/profile/MiniRecordList.vue';
 
 interface BaseInfoListItem {
   label: string;
@@ -48,8 +49,9 @@ const baseInfoList = reactive<BaseInfoListItem[]>([
     </div>
 
     <!-- 详细资料 -->
+
     <div
-      class="w-full mx-auto flex flex-col h-full overflow-auto relative z-20"
+      class="w-full mx-auto flex flex-col h-full relative z-20 overflow-auto"
     >
       <!-- 个人资料块 -->
       <div class="w-full flex-shrink-0 bg-white px-12 mt-64">
@@ -137,10 +139,12 @@ const baseInfoList = reactive<BaseInfoListItem[]>([
         </div>
       </div>
 
-      <section class="w-full flex-grow bg-gray-50">
+      <section class="w-full flex-grow bg-gray-50 pb-12">
         <div class="w-full mx-auto max-w-[1000px] mt-12">
           <div class="flex justify-between">
-            <div class="flex-grow"></div>
+            <div class="flex-grow">
+              <MiniRecordList />
+            </div>
 
             <div class="flex-shrink-0 w-80 ml-6">
               <Declaration />
@@ -153,7 +157,7 @@ const baseInfoList = reactive<BaseInfoListItem[]>([
 </template>
 
 <style scoped>
-.page-header :deep(.arco-page-header-back-btn):hover {
+.page-header :deep(.arco-page-header-back-btn)ver {
   color: red;
 }
 </style>

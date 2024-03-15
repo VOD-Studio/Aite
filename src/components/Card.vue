@@ -3,10 +3,12 @@ import Icon from 'components/Icon.vue';
 
 interface Props {
   title: string;
+  icon?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  title: '标题'
+  title: '标题',
+  icon: ''
 });
 </script>
 
@@ -14,10 +16,13 @@ const props = withDefaults(defineProps<Props>(), {
   <div class="w-full rounded bg-white shadow">
     <div class="w-full flex items-center justify-between h-16 px-5">
       <div class="flex items-center">
-        <div class="">
-          <Icon name="Quote" />
+        <div
+          v-if="props.icon"
+          class="mr-2"
+        >
+          <Icon :name="props.icon" />
         </div>
-        <span class="text-lg ml-2">{{ props.title }}</span>
+        <span class="text-lg">{{ props.title }}</span>
       </div>
       <div class="flex items-center"></div>
     </div>

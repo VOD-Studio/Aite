@@ -3,7 +3,10 @@ import Card from 'components/Card.vue';
 </script>
 
 <template>
-  <Card title="个签">
+  <Card
+    title="个签"
+    icon="Quote"
+  >
     <p>日日无事事复，日日忙忙亦茫茫。</p>
   </Card>
 </template>
