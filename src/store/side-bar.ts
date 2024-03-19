@@ -1,10 +1,11 @@
+import { IconName } from '@/components/Icon.vue';
 import { defineStore } from 'pinia';
 
 export interface MenuItem {
   id: number;
   name: string; // 菜单名
   path?: string; // 路径
-  icon?: string; // 图标
+  icon?: IconName; // 图标
   children?: MenuItem[];
 }
 

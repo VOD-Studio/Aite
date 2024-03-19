@@ -25,6 +25,7 @@ const handleMenuItemClick = (key: string) => {
       >
         <template #icon>
           <Icon
+            v-if="item.icon"
             :name="item.icon"
             :size="18"
           />
