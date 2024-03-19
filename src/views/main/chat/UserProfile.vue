@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
-import Icon from 'components/Icon.vue';
+import Icon, { IconName } from 'components/Icon.vue';
 import PageHeader from 'components/PageHeader.vue';
 import OnlineStatus from 'components/OnlineStatus.vue';
 import Declaration from 'components/profile/Declaration.vue';
@@ -8,14 +8,14 @@ import MiniRecordList from 'components/profile/MiniRecordList.vue';
 
 interface BaseInfoListItem {
   label: string;
-  icon: string;
+  icon: IconName;
   value: string;
 }
 
 const baseInfoList = reactive<BaseInfoListItem[]>([
   {
     label: 'ID',
-    icon: '',
+    icon: 'Mail',
     value: '0000001'
   },
   {

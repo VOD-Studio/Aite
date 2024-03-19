@@ -40,7 +40,7 @@ const sideBarStore = useSideBarStore();
         <a-button @click="sideBarStore.setCollapsed(!sideBarStore.collapsed)">
           <template #icon>
             <ListCollapse
-              size=" 16"
+              :size="16"
               :class="[sideBarStore.collapsed ? '' : 'rotate-180'].join('')"
             />
           </template>

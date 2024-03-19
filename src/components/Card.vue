@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import Icon from 'components/Icon.vue';
+import Icon, { IconName } from 'components/Icon.vue';
 
 interface Props {
   title: string;
-  icon?: string;
+  icon?: IconName;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   title: '标题',
-  icon: ''
+  icon: undefined
 });
 </script>
 
@@ -20,7 +20,10 @@ const props = withDefaults(defineProps<Props>(), {
           v-if="props.icon"
           class="mr-2"
         >
-          <Icon :name="props.icon" />
+          <Icon
+            v-if="props.icon"
+            :name="props.icon"
+          />
         </div>
         <span class="text-lg">{{ props.title }}</span>
       </div>

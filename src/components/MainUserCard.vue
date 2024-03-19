@@ -18,7 +18,7 @@ const logout = () => {
       userStore.$reset();
       sideBarStore.$reset();
       router.push('/login');
-      done();
+      done(true);
     }
   });
 };
