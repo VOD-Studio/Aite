@@ -5,8 +5,7 @@ const Register = () => import('views/RegisterPage.vue');
 const Login = () => import('views/Login.vue');
 
 const MainPage = () => import('views/main/Index.vue');
-const ChatIndex = () => import('views/main/chat/Index.vue');
-const ChatUserProfile = () => import('views/main/chat/UserProfile.vue');
+const UserProfile = () => import('views/main/user-profile/Index.vue');
 
 const routes: RouteRecordRaw[] = [
   {
@@ -25,16 +24,9 @@ const routes: RouteRecordRaw[] = [
     component: MainPage,
     children: [
       {
-        path: '/chat',
-        name: 'Chat',
-        component: ChatIndex,
-        children: [
-          {
-            path: 'profile',
-            name: 'ChatUserProfile',
-            component: ChatUserProfile
-          }
-        ]
+        path: '/profile',
+        name: 'Profle',
+        component: UserProfile
       }
     ]
   }

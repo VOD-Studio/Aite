@@ -23,7 +23,7 @@ export const useSideBarStore = defineStore('sideBar', {
       {
         id: 1,
         name: '舌战群儒',
-        path: '/chat',
+        path: '/profile',
         icon: 'MessageSquareText'
       }
     ],
