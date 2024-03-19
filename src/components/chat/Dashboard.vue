@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Search from './Search.vue';
 import Icon from 'components/Icon.vue';
 import FriendsList from './FriendList/Index.vue';
+import SearchPane from './search-pane/Index.vue';
 </script>
 
 <template>
@@ -10,14 +10,11 @@ import FriendsList from './FriendList/Index.vue';
     <div class="h-20 flex items-center justify-between px-6 relative border-b">
       <span class="text-xl text-primary font-bold select-none">舌战群儒</span>
 
-      <div class="flex items-center">
-        <Search />
-      </div>
+      <div class="flex items-center"></div>
     </div>
 
     <!-- 标签页内容 -->
     <a-tabs
-      :active-key="2"
       class="tabs mt-5"
       type="rounded"
     >
@@ -45,6 +42,20 @@ import FriendsList from './FriendList/Index.vue';
         </template>
 
         <FriendsList />
+      </a-tab-pane>
+
+      <a-tab-pane :key="3">
+        <template #title>
+          <div class="flex items-center">
+            <Icon
+              name="Search"
+              :size="16"
+            />
+            <!-- <span class="ml-1">消息</span> -->
+          </div>
+        </template>
+
+        <SearchPane />
       </a-tab-pane>
     </a-tabs>
   </div>
