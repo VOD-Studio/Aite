@@ -29,9 +29,9 @@ const props = withDefaults(defineProps<Props>(), {
         :key="user.id"
         class="flex items-center h-16 hover:bg-gray-100 px-4 cursor-pointer"
       >
-        <a-avatar :img-url="user.avatar">{{ user.username }}</a-avatar>
+        <a-avatar :img-url="user.avatar">{{ user.userName }}</a-avatar>
         <div class="flex flex-col ml-3 justify-between py-1">
-          <span>{{ user.username }}</span>
+          <span>{{ user.userName }}</span>
           <span class="text-xs mt-1 text-gray-500">{{ user.id }}</span>
         </div>
       </li>

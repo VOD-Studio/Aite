@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import Icon from 'components/Icon.vue';
+import Icon, { IconName } from 'components/Icon.vue';
 import { ref } from 'vue';
 import UserSearchPane from './UserSearchPane.vue';
 
 interface SearchType {
   label: string;
   value: string;
-  icon: string;
+  icon: IconName;
 }
 
-const searchTypeOpts: SearchType = [
+const searchTypeOpts: SearchType[] = [
   {
     label: '消息',
     value: 'message',

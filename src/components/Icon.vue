@@ -2,13 +2,14 @@
 import { computed } from 'vue';
 import * as icons from 'lucide-vue-next';
 
+export type IconName = keyof typeof icons;
 interface Props {
-  name: String;
-  size?: Number;
-  color?: String;
-  strokeWidth?: Number;
-  defaultClass?: String;
-  fill?: String;
+  name: IconName;
+  size?: number;
+  color?: string;
+  strokeWidth?: number;
+  defaultClass?: string;
+  fill?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
