@@ -9,7 +9,9 @@ import Dashboard from 'components/chat/Dashboard.vue';
     <section class="flex-grow flex h-full overflow-auto">
       <Dashboard class="flex-shrink-0" />
       <section class="flex-grow h-full overflow-auto">
-        <Router-view />
+        <transition name="fade">
+          <Router-view />
+        </transition>
       </section>
     </section>
   </div>

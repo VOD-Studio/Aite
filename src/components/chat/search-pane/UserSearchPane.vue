@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Icon from 'components/Icon.vue';
 
-interface User {
+export interface User {
   avatar: string;
   userName: string;
   id: string;
@@ -27,13 +27,18 @@ const props = withDefaults(defineProps<Props>(), {
       <li
         v-for="user in props.userList"
         :key="user.id"
-        class="flex items-center h-16 hover:bg-gray-100 px-4 cursor-pointer"
+        class="cursor-pointer"
       >
-        <a-avatar :img-url="user.avatar">{{ user.userName }}</a-avatar>
-        <div class="flex flex-col ml-3 justify-between py-1">
-          <span>{{ user.userName }}</span>
-          <span class="text-xs mt-1 text-gray-500">{{ user.id }}</span>
-        </div>
+        <RouterLink
+          :to="`/profile/${user.id}`"
+          class="flex items-center h-16 hover:bg-gray-100 px-4"
+        >
+          <a-avatar :img-url="user.avatar">{{ user.userName }}</a-avatar>
+          <div class="flex flex-col ml-3 justify-between py-1">
+            <span>{{ user.userName }}</span>
+            <span class="text-xs mt-1 text-gray-500">{{ user.id }}</span>
+          </div>
+        </RouterLink>
       </li>
       <li
         v-show="props.userList.length === 0 && !props.loading"

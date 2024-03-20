@@ -24,7 +24,7 @@ const routes: RouteRecordRaw[] = [
     component: MainPage,
     children: [
       {
-        path: '/profile',
+        path: '/profile/:id',
         name: 'Profle',
         component: UserProfile
       }

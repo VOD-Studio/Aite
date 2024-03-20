@@ -3,6 +3,7 @@ import { Gender } from '@/request/services/auth/register.ts';
 import OnlineStatus from 'components/OnlineStatus.vue';
 
 interface Props {
+  id?: string;
   avatar?: string;
   username?: string;
   gender?: Gender;
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  id: '00000001',
   avatar: '',
   username: 'Username',
   gender: Gender.Unknown,
@@ -18,7 +20,8 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div
+  <RouterLink
+    :to="`/profile/${props.id}`"
     class="w-full flex items-center justify-between px-4 hover:bg-gray-100 py-3 cursor-pointer transition-all"
   >
     <div class="flex items-center">
@@ -38,5 +41,5 @@ const props = withDefaults(defineProps<Props>(), {
         :show-text="false"
       />
     </div>
-  </div>
+  </RouterLink>
 </template>

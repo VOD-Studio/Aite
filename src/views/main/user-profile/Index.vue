@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { reactive, watch } from 'vue';
 import Icon, { IconName } from 'components/Icon.vue';
 import PageHeader from 'components/PageHeader.vue';
 import OnlineStatus from 'components/OnlineStatus.vue';
 import Declaration from 'components/profile/Declaration.vue';
 import MiniRecordList from 'components/profile/MiniRecordList.vue';
+import { useRoute } from 'vue-router';
 
 interface BaseInfoListItem {
   label: string;
@@ -29,6 +30,14 @@ const baseInfoList = reactive<BaseInfoListItem[]>([
     value: '2024-03-15'
   }
 ]);
+
+const route = useRoute();
+watch(
+  () => route.params,
+  (newParams) => {
+    console.log(newParams.id);
+  }
+);
 </script>
 
 <template>

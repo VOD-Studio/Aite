@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Icon, { IconName } from 'components/Icon.vue';
-import { ref } from 'vue';
-import UserSearchPane from './UserSearchPane.vue';
+import { ref, reactive } from 'vue';
+import UserSearchPane, { User } from './UserSearchPane.vue';
 
 interface SearchType {
   label: string;
@@ -34,6 +34,15 @@ const searchValue = ref('');
 const search = () => {
   console.log(searchType.value);
 };
+
+// 用户搜索结果列表
+const userList = reactive<User[]>([
+  {
+    id: '00000001',
+    avatar: '',
+    userName: 'Admin'
+  }
+]);
 </script>
 
 <template>
@@ -90,7 +99,10 @@ const search = () => {
         <span></span>
       </p>
 
-      <UserSearchPane v-show="searchType.value === 'user'" />
+      <UserSearchPane
+        v-show="searchType.value === 'user'"
+        :user-list="userList"
+      />
     </div>
   </div>
 </template>
