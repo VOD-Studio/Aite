@@ -7,7 +7,9 @@ import SearchPane from './search-pane/Index.vue';
 <template>
   <div class="w-72 border-r h-full">
     <!-- 顶部 -->
-    <div class="h-20 flex items-center justify-between px-6 relative border-b">
+    <div
+      class="h-[83px] flex items-center justify-between px-6 relative border-b"
+    >
       <span class="text-xl text-primary font-bold select-none">舌战群儒</span>
 
       <div class="flex items-center"></div>

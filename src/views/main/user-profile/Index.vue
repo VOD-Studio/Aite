@@ -6,6 +6,7 @@ import OnlineStatus from 'components/OnlineStatus.vue';
 import Declaration from 'components/profile/Declaration.vue';
 import MiniRecordList from 'components/profile/MiniRecordList.vue';
 import { useRoute } from 'vue-router';
+import EditProfile from 'components/profile/EditProfile.vue';
 
 interface BaseInfoListItem {
   label: string;
@@ -108,6 +109,7 @@ watch(
                   </template>
                   关注
                 </a-button>
+                <EditProfile class="ml-3" />
                 <!-- <a-button class="ml-3" shape="round"> -->
                 <!--   <template #icon> -->
                 <!--     <Icon name="UserMinus" /> -->

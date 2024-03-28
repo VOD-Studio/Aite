@@ -5,6 +5,9 @@ export default {
     extend: {
       colors: {
         primary: '#165dff'
+      },
+      width: {
+        innerPage: '1000px'
       }
     }
   },

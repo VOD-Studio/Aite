@@ -6,6 +6,7 @@ const Login = () => import('views/Login.vue');
 
 const MainPage = () => import('views/main/Index.vue');
 const UserProfile = () => import('views/main/user-profile/Index.vue');
+const EditProfile = () => import('views/main/edit-profile/Index.vue');
 
 const routes: RouteRecordRaw[] = [
   {
@@ -27,6 +28,11 @@ const routes: RouteRecordRaw[] = [
         path: '/profile/:id',
         name: 'Profle',
         component: UserProfile
+      },
+      {
+        path: '/edit-profile',
+        name: 'EditProfile',
+        component: EditProfile
       }
     ]
   }
