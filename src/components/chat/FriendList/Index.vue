@@ -26,7 +26,7 @@ const users = [
         :key="user.id"
       >
         <ListItem
-          :id="user.id"
+          :id="user.id.toString()"
           :username="user.username"
           :online="user.online"
           :avatar="user.avatar"
