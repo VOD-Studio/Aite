@@ -1,8 +1,15 @@
 import { defineStore } from 'pinia';
 import { Gender } from '@/request/services/auth/register.ts';
-import { loginRequest, type Params } from '@/request/services/auth/login';
+import {
+  loginRequest,
+  type Params as LoginRequestParams
+} from '@/request/services/auth/login';
 import LocalStorageManager from '@/libs/local-storage-manager';
 import { Notification } from '@arco-design/web-vue';
+import {
+  editProfileRequest,
+  type Params as EditProfileRequestParams
+} from '@/request/services/user/edit-profile';
 
 interface State {
   id: number;
@@ -45,7 +52,8 @@ export const useUserStore = defineStore('user', {
       this.updated_at = baseInfo.updated_at;
       this.last_login = baseInfo.last_login;
     },
-    async login(params: Params) {
+    // 登录
+    async login(params: LoginRequestParams) {
       return new Promise((resolve, reject) => {
         loginRequest(params)
           .then((res) => {
@@ -65,6 +73,22 @@ export const useUserStore = defineStore('user', {
             this.last_login = res.data.last_login;
 
             Notification.success('登录成功');
+            resolve(res);
+          })
+          .catch((res) => {
+            reject(res);
+          });
+      });
+    },
+    // 修改资料
+    async editProfile(params: EditProfileRequestParams) {
+      return new Promise((resolve, reject) => {
+        editProfileRequest(params)
+          .then((res) => {
+            // 修改 store 中的数据
+            this.username = res.data.username;
+
+            Notification.success('资料修改成功');
             resolve(res);
           })
           .catch((res) => {

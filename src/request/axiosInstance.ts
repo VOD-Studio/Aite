@@ -14,6 +14,13 @@ const handleError = (error: AxiosError) => {
 // 请求拦截器
 axiosInstance.interceptors.request.use((config) => {
   NProgress.start();
+
+  // 塞入 token
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = 'Bearer ' + token;
+  }
+
   return config;
 }, handleError);
 
