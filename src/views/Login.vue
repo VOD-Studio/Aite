@@ -34,7 +34,7 @@ const handleSubmit = () => {
           password: form.password
         })
         .then(() => {
-          router.push('/main');
+          router.push('/');
         })
         .catch((res) => {
           switch (res.response.status) {
