@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import { Gender } from '@/request/services/auth/register.ts';
 import {
   loginRequest,
   type Params as LoginRequestParams
@@ -10,19 +9,9 @@ import {
   editProfileRequest,
   type Params as EditProfileRequestParams
 } from '@/request/services/user/edit-profile';
+import { IGender, IUser } from '@/types/user';
 
-interface State {
-  id: number;
-  email: string;
-  username: string;
-  description: string;
-  avatar: string;
-  gender: Gender;
-  uid: number;
-  created_at: string;
-  updated_at: string;
-  last_login: number;
-}
+interface State extends Omit<IUser, 'online'> {}
 
 export const useUserStore = defineStore('user', {
   state: (): State => ({
@@ -31,7 +20,7 @@ export const useUserStore = defineStore('user', {
     username: '',
     description: '',
     avatar: '',
-    gender: Gender.Unknown,
+    gender: IGender.Unknown,
     uid: 0,
     created_at: '',
     updated_at: '',

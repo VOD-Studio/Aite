@@ -4,7 +4,8 @@ const api = {
     login: '/login'
   },
   user: {
-    editProfile: '/user'
+    editProfile: '/user',
+    findUsers: '/user'
   }
 };
 

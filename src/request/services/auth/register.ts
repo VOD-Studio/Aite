@@ -1,17 +1,12 @@
 import Request from '@/request/request.ts';
 import api from '@/request/api.ts';
-
-export enum Gender {
-  Man,
-  Women,
-  Unknown
-}
+import { IGender } from '@/types/user';
 
 export interface Params {
   username: string;
   email: string;
   password: string;
-  gender?: Gender;
+  gender?: IGender;
   description?: string;
 }
 

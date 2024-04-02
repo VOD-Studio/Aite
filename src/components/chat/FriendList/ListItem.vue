@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { Gender } from '@/request/services/auth/register.ts';
 import OnlineStatus from 'components/OnlineStatus.vue';
+import { IGender } from '@/types/user.ts';
 
 interface Props {
   id?: string;
   avatar?: string;
   username?: string;
-  gender?: Gender;
+  gender?: IGender;
   online?: boolean;
 }
 
@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<Props>(), {
   id: '00000001',
   avatar: '',
   username: 'Username',
-  gender: Gender.Unknown,
+  gender: IGender.Unknown,
   online: true
 });
 </script>

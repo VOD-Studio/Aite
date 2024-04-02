@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Icon, { IconName } from 'components/Icon.vue';
-import { ref, reactive } from 'vue';
-import UserSearchPane, { User } from './UserSearchPane.vue';
+import { ref } from 'vue';
+import UserSearchPane, { UserListItem } from './UserSearchPane.vue';
+import { findUsersRequest } from '@/request/services/user/find-users';
 
 interface SearchType {
   label: string;
@@ -9,6 +10,7 @@ interface SearchType {
   icon: IconName;
 }
 
+// 搜索类型选项
 const searchTypeOpts: SearchType[] = [
   {
     label: '消息',
@@ -27,22 +29,40 @@ const searchTypeOpts: SearchType[] = [
   }
 ];
 
+// 当前搜索类型
 const searchType = ref<SearchType>(searchTypeOpts[0]);
 
+// 搜索值
 const searchValue = ref('');
 
+// 搜索请求
 const search = () => {
   console.log(searchType.value);
+
+  const { value } = searchValue;
+
+  findUsersRequest({
+    uid: value
+  }).then((res) => {
+    userList.value = res.data;
+
+    const _userList: UserListItem[] = [];
+
+    res.data.forEach((v) => {
+      _userList.push({
+        id: v.id,
+        uid: v.uid,
+        avatar: v.avatar,
+        username: v.username
+      });
+    });
+
+    userList.value = _userList;
+  });
 };
 
 // 用户搜索结果列表
-const userList = reactive<User[]>([
-  {
-    id: '00000001',
-    avatar: '',
-    userName: 'Admin'
-  }
-]);
+const userList = ref<UserListItem[]>([]);
 </script>
 
 <template>

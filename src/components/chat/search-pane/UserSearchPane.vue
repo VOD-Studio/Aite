@@ -1,15 +1,13 @@
 <script setup lang="ts">
+import { IUser } from '@/types/user';
 import Icon from 'components/Icon.vue';
 
-export interface User {
-  avatar: string;
-  userName: string;
-  id: string;
-}
+export interface UserListItem
+  extends Pick<IUser, 'avatar' | 'username' | 'uid' | 'id'> {}
 
 interface Props {
   loading?: boolean;
-  userList?: User[];
+  userList?: UserListItem[];
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -33,10 +31,10 @@ const props = withDefaults(defineProps<Props>(), {
           :to="`/profile/${user.id}`"
           class="flex items-center h-16 hover:bg-gray-100 px-4"
         >
-          <a-avatar :img-url="user.avatar">{{ user.userName }}</a-avatar>
+          <a-avatar :img-url="user.avatar">{{ user.username }}</a-avatar>
           <div class="flex flex-col ml-3 justify-between py-1">
-            <span>{{ user.userName }}</span>
-            <span class="text-xs mt-1 text-gray-500">{{ user.id }}</span>
+            <span>{{ user.username }}</span>
+            <span class="text-xs mt-1 text-gray-500">{{ user.uid }}</span>
           </div>
         </RouterLink>
       </li>
