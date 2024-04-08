@@ -1,0 +1,11 @@
+image: "node:18.16.0"
+
+stages:        
+  - build
+
+build-job:       
+  stage: build
+  script:
+    - npm i -g pnpm
+    - pnpm install --frozen-lockfile
+    - pnpm build
