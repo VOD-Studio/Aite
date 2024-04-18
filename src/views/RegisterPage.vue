@@ -2,7 +2,8 @@
 import AuthLayout from 'layouts/AuthLayout.vue';
 import { FormInstance, Notification, FieldRule } from '@arco-design/web-vue';
 import { reactive, ref } from 'vue';
-import { Gender, registerRequest } from '@/request/services/auth/register.ts';
+import { registerRequest } from '@/request/services/auth/register.ts';
+import { IGender } from '@/types/user';
 
 const formRef = ref<FormInstance>();
 
@@ -10,7 +11,7 @@ const form = reactive({
   email: '',
   username: '',
   password: '',
-  gender: Gender.Unknown
+  gender: IGender.Unknown
 });
 
 const formRules: Record<string, FieldRule<unknown> | FieldRule<unknown>[]> = {
@@ -100,9 +101,9 @@ const handleSubmit = () => {
           label="性别"
         >
           <a-radio-group v-model="form.gender">
-            <a-radio :value="Gender.Unknown">保密</a-radio>
-            <a-radio :value="Gender.Man">男</a-radio>
-            <a-radio :value="Gender.Women">女</a-radio>
+            <a-radio :value="IGender.Unknown">保密</a-radio>
+            <a-radio :value="IGender.Man">男</a-radio>
+            <a-radio :value="IGender.Women">女</a-radio>
           </a-radio-group>
         </a-form-item>
         <a-form-item>
