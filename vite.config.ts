@@ -9,6 +9,7 @@ const isProdcution = process.env.NODE_ENV === 'production';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   esbuild: {
     drop: isProdcution ? ['console', 'debugger'] : []
   },
