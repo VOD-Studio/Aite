@@ -101,9 +101,9 @@ const handleSubmit = () => {
           label="性别"
         >
           <a-radio-group v-model="form.gender">
-            <a-radio :value="Gender.Unknown">保密</a-radio>
-            <a-radio :value="Gender.Man">男</a-radio>
-            <a-radio :value="Gender.Women">女</a-radio>
+            <a-radio :value="IGender.Unknown">保密</a-radio>
+            <a-radio :value="IGender.Man">男</a-radio>
+            <a-radio :value="IGender.Women">女</a-radio>
           </a-radio-group>
         </a-form-item>
         <a-form-item>
