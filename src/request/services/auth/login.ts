@@ -1,6 +1,6 @@
 import Request from '@/request/request.ts';
 import api from '@/request/api.ts';
-import { Gender } from '@/request/services/auth/register.ts';
+import { IGender } from '@/types/user';
 
 export interface Params {
   email: string;
@@ -13,7 +13,7 @@ export interface Response {
   username: string;
   description: string;
   avatar: string;
-  gender: Gender;
+  gender: IGender;
   uid: number;
   created_at: string;
   updated_at: string;

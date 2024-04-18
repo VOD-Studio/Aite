@@ -10,8 +10,6 @@
     "build:test": "vue-tsc && vite build --mode development",
     "tsc": "vue-tsc",
     "preview": "vite preview",
-    "tauri:dev": "tauri dev",
-    "tauri:build": "tauri build",
     "lint": "eslint --ext .js,.vue .",
     "lint:fix": "eslint --fix --ext .js,.ts,.vue --ignore-path .eslintignore .",
     "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,md,mdx,css,vue}\" --ignore-unknown",
@@ -28,7 +26,6 @@
   },
   "devDependencies": {
     "@arco-design/web-vue": "^2.54.6",
-    "@tauri-apps/cli": "^1.5.11",
     "@types/node": "^20.11.27",
     "@types/nprogress": "^0.2.3",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

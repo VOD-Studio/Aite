@@ -2,7 +2,8 @@
 import AuthLayout from 'layouts/AuthLayout.vue';
 import { FormInstance, Notification, FieldRule } from '@arco-design/web-vue';
 import { reactive, ref } from 'vue';
-import { Gender, registerRequest } from '@/request/services/auth/register.ts';
+import { registerRequest } from '@/request/services/auth/register.ts';
+import { IGender } from '@/types/user';
 
 const formRef = ref<FormInstance>();
 
@@ -10,7 +11,7 @@ const form = reactive({
   email: '',
   username: '',
   password: '',
-  gender: Gender.Unknown
+  gender: IGender.Unknown
 });
 
 const formRules: Record<string, FieldRule<unknown> | FieldRule<unknown>[]> = {
