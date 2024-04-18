@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -22,12 +22,18 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+
   # Single deploy job since we're just deploying
   deploy:
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        node-version: [20.12.0]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,7 +46,6 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
