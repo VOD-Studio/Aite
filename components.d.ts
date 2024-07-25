@@ -42,6 +42,7 @@ declare module 'vue' {
     Dashboard: typeof import('./src/components/chat/Dashboard.vue')['default']
     Declaration: typeof import('./src/components/profile/Declaration.vue')['default']
     EditProfile: typeof import('./src/components/profile/EditProfile.vue')['default']
+    Flex: typeof import('./src/components/Flex.vue')['default']
     Icon: typeof import('./src/components/Icon.vue')['default']
     Index: typeof import('./src/components/chat/FriendList/Index.vue')['default']
     ListItem: typeof import('./src/components/chat/FriendList/ListItem.vue')['default']

@@ -8,6 +8,8 @@ const MainPage = () => import('views/main/Index.vue');
 const UserProfile = () => import('views/main/user-profile/Index.vue');
 const EditProfile = () => import('views/main/edit-profile/Index.vue');
 
+const V2MainPage = () => import('views/v2/Index.vue');
+
 const routes: RouteRecordRaw[] = [
   {
     path: '/register',
@@ -35,6 +37,11 @@ const routes: RouteRecordRaw[] = [
         component: EditProfile
       }
     ]
+  },
+  {
+    path: '/v2',
+    name: 'v2',
+    component: V2MainPage
   }
 ];
 
